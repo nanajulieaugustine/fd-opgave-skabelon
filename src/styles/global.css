@@ -1,1 +1,14 @@
-/* Globale styles her */
+:root {
+  /*colors*/
+  --primary01-color: #ffcc4a;
+  --primary02-color: #4eaf4e;
+  --primary03-color: #181818;
+
+  --secondary01-color: #f5f5f5;
+  --secondary02-color: #ffffff;
+
+  /*buttons*/
+  --btn-primary-color: #ffcc4a;
+  --btn-secondary-color: #181818;
+  --btn-tertiary-color: #fff;
+}

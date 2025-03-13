@@ -1,0 +1,23 @@
+---
+
+import EmplyeesCard from "../components/EmplyeesCard.astro";
+import Layout from "../layouts/Layout.astro";
+
+const employees = await fetch(
+  "https://frontend-design-theme.netlify.app/api/employees"
+).then((response) => response.json());
+
+console.log("liste",employees);
+---
+
+<Layout>
+    <div>
+        <ul>
+            {
+                employees.map((elm)=>(
+                    <EmplyeesCard name={elm.name} title={elm.title} description = {elm.description} link={elm.slug}/>
+                ))
+            }
+        </ul>
+    </div>
+</Layout>

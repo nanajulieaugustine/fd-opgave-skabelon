@@ -1,0 +1,51 @@
+---
+const {variant, size}=Astro.props;
+---
+
+<button data-size={size} data-variant={variant}><slot/>/</button>
+
+<style>
+    button{
+        cursor:pointer;
+        color: var( --primary03-color);
+        background-color:var(--btn-primary-color);
+        border-radius: 42px;
+        gap:10px;
+    }
+
+    [data-variant="secondary"]{
+        color:var(--btn-tertiary-color);
+        background-color:var(--btn-secondary-color);
+    }
+
+    [data-variant="tertiary"]{
+        background-color:var(--btn-tertiary-color);
+    }
+
+    [data-size="xlarge"] {
+        width:245px;
+        height:59px;
+        padding:15px 56px;
+    }
+
+    [data-size="large"]{
+        width:189px;
+        height:61px;
+        padding:16px 31px;
+    }
+
+    [date-size="medium"]{
+        width:168px;
+        height:59px;
+        border-radius: 55px;
+        padding:15px 30px;
+    }
+
+    [date-size="small"]{
+                width:74px;
+        height:36px;
+        border-radius: 20px;
+        padding:4px 16px;
+    }
+
+</style>

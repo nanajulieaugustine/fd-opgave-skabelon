@@ -1,0 +1,15 @@
+---
+export async function getStaticPaths() {
+    const url = "https://frontend-design-theme.netlify.app/api/employees";
+    
+    const employees = await fetch(url).then(res=>res.json())
+    
+    return employees.map(employee => ({
+        params: { filnavn: employee.slug }, // [produkt]=produkt.slug
+        props: { employee } // send al data med som props
+      }))
+  }
+  
+  const { employee } = Astro.props;
+  console.log(employee)
+  ---

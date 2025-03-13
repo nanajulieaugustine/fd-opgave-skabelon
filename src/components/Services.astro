@@ -3,6 +3,8 @@
 const servicesData = await fetch(
   "https://frontend-design-theme.netlify.app/api/services"
 ).then((response) => response.json());
+
+console.log("liste",servicesData);
 ---
 
 <ul>

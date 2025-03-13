@@ -1,0 +1,9 @@
+---
+const {name, title, description, link} = Astro.props;
+---
+<ul>
+    <a href={"/employees/"+link}>
+    <li>{name}</li>
+    <li>{title}</li>
+    <li>{description}</li></a>
+</ul>
