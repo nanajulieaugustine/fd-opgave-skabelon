@@ -1,5 +1,8 @@
 ---
 import "../styles/main.css";
+import Newsletter from "../components/Newsletter.astro";
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
 ---
 
 <html lang="en">
@@ -14,7 +17,14 @@ import "../styles/main.css";
     <title>DIN TITEL HER. MÅSKE SOM PROP?</title>
   </head>
   <body>
+    <header>
+      <Navbar/>
+    </header>
     <slot />
+    <Newsletter/>
+    <footer>
+      <Footer/>
+    </footer>
   </body>
 </html>
 

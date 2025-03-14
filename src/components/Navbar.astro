@@ -1,0 +1,51 @@
+---
+import Buttons from "./Buttons.astro"
+---
+<section>
+    <h2>AskExperts</h2>
+    <nav>
+      <ul class="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/casestidy">Case Study</a></li>
+        <li><a href="/team">Team</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+    <Buttons class="login" size="small">Login</Buttons>
+</section>
+
+    <style>
+        section{
+            display:flex;
+            padding:38px;
+            justify-content: space-between;
+            align-items: flex-start;
+            background: rgba(27, 27, 27, 0.91);
+            backdrop-filter: blur(10.5px);
+            padding-inline:var(--content-width);
+
+            h2{
+                color:var(--secondary01-color);
+            }
+
+            a{
+                color:var(--secondary01-color);
+                transition: linear 0.2s;
+
+                &:hover{
+                color:var(--tertiary01-color);
+            }
+            }
+
+            ul{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                gap:30px;
+
+                li{
+                    list-style: none;
+                }
+            }
+        }
+    </style>

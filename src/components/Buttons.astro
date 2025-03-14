@@ -10,8 +10,9 @@ const {variant, size}=Astro.props;
         color: var(--primary03-color);
         background-color:var(--primary01-color);
         border-radius: 42px;
+        font-weight: 600;
         gap:10px;
-        transition: color 0.3s;
+        transition: linear 0.3s;
 
         &:hover{
             background-color: var(--tertiary02-color);
@@ -57,7 +58,7 @@ const {variant, size}=Astro.props;
     }
 
     [date-size="small"]{
-                width:74px;
+        width:74px;
         height:36px;
         border-radius: 20px;
         padding:4px 16px;
