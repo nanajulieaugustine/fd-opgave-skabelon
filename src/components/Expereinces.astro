@@ -1,4 +1,5 @@
 ---
+
 import Titles from "./Titles.astro";
 
 const expereinces = await fetch(
@@ -10,7 +11,7 @@ console.log("liste",expereinces);
 
 <section>
   <article>
-    <Titles class="secondary">expereince</>
+    <Titles class="secondary">expereince</Titles>
       <h1>More than 25 years of expereince</h1>
       <p>3000+ our clients are insured around the world</p>
   </article>
@@ -18,10 +19,10 @@ console.log("liste",expereinces);
     {
       expereinces.stats.map((oplevelse)=>(
         <li>
-          {""}
-          <h3>{oplevelse.label}</h3>
-          <p>{oplevelse.value}%</p>
-          {""}
+          <div>
+            <p style="--percent:{oplevelse.value}">{oplevelse.value}%</p>
+          </div>
+            <h3>{oplevelse.label}</h3>
         </li>
       ))
     }
@@ -34,5 +35,81 @@ console.log("liste",expereinces);
     align-items: flex-start;
     gap:89px;
     background-color: var(--primary01-color);
+    padding-inline: var(--content-width);
+    padding-top:var(--content-height);
+    padding-bottom:var(--content-height);
+
+    article{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      flex-shrink: 0;
+      gap:22px;
+      width:375px;
+
+      p{
+        color:var(--primary03-color)
+      }
+    }
+
+    ul{
+      display:flex;
+      align-items: flex-start;
+      margin-top:2rem;
+      gap:90px;
+
+      li{
+      list-style: none;
+      gap:60px;
+
+        p{
+          font-weight: 700;
+          font-size: var(--xlg-font-size);
+          color:var(--primary03-color);
+          text-align: center;
+        }
+
+        h3{
+          margin-top:1.5rem;
+          text-align: center;
+        }
+
+        div{
+      --p:calc(var(--percent)*1%);
+      --border-width: 4px;
+      aspect-ratio: 1;
+      width: 150px;
+      border-radius: calc(Infinity * 1px);
+      border: var(--border-width) solid var(--secondary01-color);
+      background:
+      radial-gradient(circle at 50% calc(var(--border-width)/2), red calc(var(--border-width)/2), transparent 0) border-box,
+      linear-gradient(#fff, #fff) padding-box,
+      conic-gradient(red var(--p), gray 0) border-box;
+  
+      display: grid;
+      counter-reset: count var(--percent);
+
+        &::before,
+        &::after {
+          grid-area: 1 / 1;
+        }
+        
+        &::after {
+            place-self:center;
+        }
+        
+        &::before {
+          content: '';
+          aspect-ratio: 1;
+          border-radius: calc(Infinity * 1px);
+          width: calc(var(--border-width)*3);
+          background: var(--primary03-color);
+          offset-path:border-box;
+          offset-distance:var(--p);
+          offset-anchor:50% calc(50% - var(--border-width)/2);
+        }
+      }
+      }
+    }
   }
 </style>

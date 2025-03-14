@@ -1,7 +1,89 @@
 ---
+import Titles from "./Titles.astro";
+import Buttons from "./Buttons.astro";
+
 const coreValues = await fetch(
   "https://frontend-design-theme.netlify.app/api/coreValues"
 ).then((response) => response.json());
 
 console.log("liste",coreValues);
 ---
+
+<section>
+  <article>
+    <Titles>Growing with our Clients</Titles>
+    <h1>Our core values & principles</h1>
+    <div>
+      <p>Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.</p>
+      <Buttons variant="tertiary" size="medium">Get in touch</Buttons>
+    </div>
+  </article>
+<ul>
+  {
+    coreValues.values.map(async (item) => {
+      const Icon = await import(`../icons/${item.icon}.svg`).then(
+        (module) => module.default
+      );
+
+      return (
+        <li>
+          <Icon />
+          <h2>{item.title}</h2>
+          <p>{item.description}</p>
+          <a href="#0">Read More</a>
+        </li>
+      );
+    })
+  }
+</ul>
+</section>
+
+<style>
+  section{
+    background-color: var(--primary03-color);
+    padding-inline: var(--content-width);
+    padding-top:var(--content-height);
+    padding-bottom:var(--content-height);
+    
+    article{
+      display:flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap:8px;
+      width:1200px;
+
+      h1 {
+      color: var(--secondary02-color);
+      }
+
+      div{
+        display: flex;
+        align-items: flex-end;
+        gap:443px;
+        p {
+        color: var(--secondary02-color);
+        }
+      }
+      }
+      ul{
+        margin-top:2rem;
+        padding-inline:0;
+        display: flex;
+        align-items: flex-start;
+        gap:36px;
+
+        li{
+          border-radius: 10px;
+          border: 1px solid #EAEAEA;
+          background: var(--secondary01-color);
+          display: flex;
+          width: 272px;
+          padding: 36px 23px;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 15px;
+          flex-shrink: 0;
+        }
+    }
+  }
+</style>

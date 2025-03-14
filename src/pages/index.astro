@@ -4,6 +4,7 @@ import Hero from "../components/Hero.astro";
 import Projections from "../components/Projections.astro";
 import Titles from "../components/Titles.astro";
 import Expereinces from "../components/Expereinces.astro";
+import Corevalues from "../components/CoreValues.astro";
 ---
 
 <Layout>
@@ -24,10 +25,35 @@ import Expereinces from "../components/Expereinces.astro";
       </ul>
     </article>
   </section>
-  <div>
+  <div class="componentSections">
     <Projections/>
+    <Expereinces/>
+    <Corevalues/>
   </div>
-  <Expereinces/>
+  <section class="contact">
+    <article>
+    <Titles>Process</Titles>
+    <h1>Contact Us. It's Easy.</h1>
+    <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative.</p>
+    <ul>
+      <li>
+        <p>Call Today</p>
+        <h3>+1 800 100 900</h3>
+      </li>
+      <li>
+        <p>Monday To Friday</p>
+        <h3>9AM-5PM</h3>
+      </li>
+      <li>
+        <p>USA Office</p>
+        <h3>195 Devonshire St Boston, MA 02110</h3>
+      </li>
+    </ul>
+    </article>
+    <div>
+      
+    </div>
+  </section>
 </Layout>
 
 <style>
@@ -75,8 +101,32 @@ import Expereinces from "../components/Expereinces.astro";
     }
   }
 
-  div{
+  .componentSections{
     background-color: var(--secondary01-color);
+  }
+
+  .contact{
+    display:inline-flex;
+    align-items: flex-start;
+    gap:69px;
+
+    article{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 407px;
+      gap:6px;
+    }
+
+    ul{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap:56px;
+      li{
+        list-style: none;
+      }
+    }
   }
 
 </style>
