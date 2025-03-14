@@ -1,0 +1,20 @@
+---
+const {variant} = Astro.props
+---
+
+<p class={variant}><slot/></p>
+
+<style>
+        p{
+        border-radius: 15px;
+        padding:2px 15px;
+        text-transform: uppercase;
+        letter-spacing: 2.32px;
+        background-color: var(--primary01-color);
+      }
+
+      .secondary{
+        background-color: var(--secondary02-color);
+        }
+
+</style>

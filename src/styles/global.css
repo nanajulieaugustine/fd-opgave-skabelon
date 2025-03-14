@@ -1,4 +1,8 @@
 :root {
+  /*typography*/
+  --heading-typography: "Cabin", sans-serif;
+  --paragraph-typography: "Lato", sans-serif;
+
   /*colors*/
   --primary01-color: #ffcc4a;
   --primary02-color: #4eaf4e;
@@ -7,8 +11,76 @@
   --secondary01-color: #f5f5f5;
   --secondary02-color: #ffffff;
 
-  /*buttons*/
-  --btn-primary-color: #ffcc4a;
-  --btn-secondary-color: #181818;
-  --btn-tertiary-color: #fff;
+  --tertiary01-color: #595566;
+  --tertiary02-color: #ffe5a2;
+
+  /*font-sizing*/
+  --xlg-font-size: 50px;
+  --lg-font-size: 45px;
+  --md-font-size: 25px;
+  --sm-font-size: 20px;
+  --xsm-font-size: 18px;
+  --xxsm-font-size: 16px;
+
+  /*spacing*/
+  --content-width: 10rem;
+  --content-height: 4rem;
+
+  /*icons*/
+  --checkmark-icon: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="%234EAF4E" d="M176.49 95.51a12 12 0 0 1 0 17l-56 56a12 12 0 0 1-17 0l-24-24a12 12 0 1 1 17-17L112 143l47.51-47.52a12 12 0 0 1 16.98.03M236 128A108 108 0 1 1 128 20a108.12 108.12 0 0 1 108 108m-24 0a84 84 0 1 0-84 84a84.09 84.09 0 0 0 84-84"/></svg>');
+
+  /*cards*/
+  --card-padding: 2.75rem 2.1875rem;
+  --card-gap: 1rem;
+  --card-border-radius: 8px;
+  --card-background: #ebebeb;
+  --card-text-color: #595566;
+}
+
+body {
+  background-color: var(--secondary02-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--heading-typography);
+  color: var(--primary03-color);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: var(--lg-font-size);
+  line-height: 58px;
+}
+
+h2 {
+  font-size: var(--md-font-size);
+  line-height: 52.2px;
+}
+
+h3 {
+  font-size: var(--sm-font-size);
+  line-height: 29px;
+}
+
+h4 {
+  font-size: var(--xsm-font-size);
+  line-height: 23.2px;
+}
+
+a {
+  font-size: var(--xsm-font-size);
+  line-height: 28.8px;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--primary03-color);
+}
+
+p {
+  font-family: var(--paragraph-typography);
+  font-size: var(--xxsm-font-size);
+  color: var(--tertiary01-color);
+  line-height: 23.6px;
 }

@@ -1,7 +1,38 @@
 ---
+import Titles from "./Titles.astro";
+
 const expereinces = await fetch(
   "https://frontend-design-theme.netlify.app/api/experience"
 ).then((response) => response.json());
 
 console.log("liste",expereinces);
 ---
+
+<section>
+  <article>
+    <Titles class="secondary">expereince</>
+      <h1>More than 25 years of expereince</h1>
+      <p>3000+ our clients are insured around the world</p>
+  </article>
+  <ul>
+    {
+      expereinces.stats.map((oplevelse)=>(
+        <li>
+          {""}
+          <h3>{oplevelse.label}</h3>
+          <p>{oplevelse.value}%</p>
+          {""}
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  section{
+    display:flex;
+    align-items: flex-start;
+    gap:89px;
+    background-color: var(--primary01-color);
+  }
+</style>

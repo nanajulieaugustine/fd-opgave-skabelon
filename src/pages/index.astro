@@ -1,10 +1,82 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
+import Projections from "../components/Projections.astro";
+import Titles from "../components/Titles.astro";
+import Expereinces from "../components/Expereinces.astro";
 ---
 
 <Layout>
   <Hero />
+  <section class="whatToExpect">
+    <img src="../images/meeting_man_front.jpg" alt="">
+    <article>
+      <Titles>we'll work with you</Titles>
+      <h1>What To Expect</h1>
+      <p>Our collaboration is built on transparency, efficiency, and measurable results. Together, we create strategies tailored to your unique needs and goals.</p>
+      <ul>
+        <li>
+          Collaborate to build actionable strategies that drive sustainable growth and deliver tangible outcomes.
+        </li>
+        <li>
+          Identify opportunities to optimize processes and implement impactful solutions with measurable results.
+        </li>
+      </ul>
+    </article>
+  </section>
+  <div>
+    <Projections/>
+  </div>
+  <Expereinces/>
 </Layout>
 
-<style></style>
+<style>
+  section{
+    padding-inline: var(--content-width);
+    padding-top:var(--content-height);
+  }
+
+  .whatToExpect{
+    display:inline-flex;
+    align-items: flex-start;
+    gap:82px;
+    padding-bottom:var(--content-height);
+
+    img{
+      border-radius: 25px;
+    }
+
+    article{
+      display:flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap:14px;
+      ul {
+      display: grid;
+      gap: 1rem;
+      padding-left: 0;
+      }
+      
+      li{
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 1rem;
+        font-size: 1rem;
+        color: #595566;
+      }
+      li:before {
+      content: '';
+      width: 1.6rem;
+      height:1lh;
+      background: var(--checkmark-icon) 50% 50% / 100% auto no-repeat;
+      background-position:50%;
+      background-size:100% auto;
+      }
+    }
+  }
+
+  div{
+    background-color: var(--secondary01-color);
+  }
+
+</style>

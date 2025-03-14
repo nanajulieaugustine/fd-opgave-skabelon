@@ -1,7 +1,98 @@
 ---
+import ArrowRight from "../icons/arrow--right.svg";
+import ArrowLeft from "../icons/arrow-left.svg";
+
+//@ts-nocheck
 const financialProjections = await fetch(
   "https://frontend-design-theme.netlify.app/api/financialProjections"
 ).then((response) => response.json());
-
-console.log("liste",financialProjections);
 ---
+<section>
+  <article>
+    <h1>Financial Projections</h1>
+    <p>Financial projections are essential for planning and monitoring a company’s performance. They provide insights into potential revenue, expenses, and profitability over specific periods.</p>
+    <div>
+      <ArrowLeft class="left" />
+      <ArrowRight class="right"/>
+    </div>
+  </article>
+</section>
+<ul>
+  {
+    financialProjections.values.map(async (item) => {
+      const Icon = await import(`../icons/${item.icon}.svg`).then(
+        (module) => module.default
+      );
+
+      return (
+        <li>
+          <Icon />
+          <h2>{item.title}</h2>
+          <p>{item.description}</p>
+        </li>
+      );
+    })
+  }
+</ul>
+<style>
+  section{
+    padding-inline: var(--content-width);
+    padding-top:var(--content-height);
+    display:flex;
+    align-items: flex-end;
+    article{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr;
+      gap:17px;
+
+      p{
+        grid-column: 1;
+        grid-row: 2;
+      }
+
+      div{
+      display:flex;
+      grid-row: 2;
+      justify-content: flex-end;
+      gap:26px;
+      
+
+      .right, .left{
+        background-color: var(--primary01-color);
+        border-radius: 100%;
+        width:50px;
+        padding:15px;
+        height: 50px;
+      }
+
+      .left{
+        color:var(--secondary02-color);
+        background-color: var(--primary03-color);
+      }
+    }
+  }
+}
+ul {
+    display:flex;
+    grid-column:content;
+    scroll-snap-type: inline mandatory;
+    gap:var(--card-gap);
+    display: flex;
+    overflow-x: auto;
+    padding-inline:var(--content-width);
+  
+    li{
+    flex-basis:min(90%, 400px);
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    display: grid;
+    padding:var(--card-padding);
+    border-radius: var(--card-border-radius);
+
+    background-color:var(--card-background);
+    color:var(--card-text-color);
+  }
+}
+</style>
