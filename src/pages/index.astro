@@ -10,7 +10,9 @@ import Corevalues from "../components/CoreValues.astro";
 <Layout>
   <Hero />
   <section class="whatToExpect">
-    <img src="../images/meeting_man_front.jpg" alt="">
+    <figure>
+      <img src="../images/meeting_man_front.jpg" alt="">
+    </figure>
     <article>
       <Titles>we'll work with you</Titles>
       <h1>What To Expect</h1>
@@ -74,6 +76,42 @@ import Corevalues from "../components/CoreValues.astro";
     gap:82px;
     padding-bottom:var(--content-height);
 
+    figure{
+      position:relative;
+      width:100%;
+
+          &::before {
+        --square-count: 10;
+        --square-size: 1.34rem;
+        
+        --_square-size: var(--square-size, 1rem);
+        --_square-half: calc(var(--square-size) / 2);
+        --_square-sum: calc(var(--square-count) * var(--square-size));
+        z-index: -1;
+        content: '';
+        position: absolute;
+        inset: -50px 250px auto auto;
+        /*inline-size: calc(var(--square-count) * 1.34rem - .67rem);*/
+        inline-size: calc( round( var(--_square-sum), var(--_square-size) ) - var(--_square-half) );
+        aspect-ratio: 1;
+        background: linear-gradient(135deg, #BE965D, #976F40, #C99B61, #F0BE7B , #FFCB85, #EEBC79, #C0935B, #976F40) 0 0 / 100% 100%;
+        mask:
+          var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
+          var(--square-pattern) var(--_square-half) var(--_square-half) / var(--_square-size) var(--_square-size);
+        /*clip-path: polygon(-3% 0%, 100% 0%, 100% 103%);*/
+      }
+        &::after {
+      content: '';
+      position: absolute;
+      left: -1rem;
+      top: -2rem;
+      background: var(--primary02-color);
+      width: 150px;
+      height: 100px;
+      border-radius: 20px;
+      z-index: -1;
+    }
+  }
     article{
       display:flex;
       flex-direction: column;

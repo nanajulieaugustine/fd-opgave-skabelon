@@ -11,7 +11,7 @@ import Buttons from "./Buttons.astro"
         <li><a href="/about">About</a></li>
       </ul>
     </nav>
-    <Buttons class="login" size="small">Login</Buttons>
+    <Buttons popovertarget="popup" size="small">Login</Buttons>
 </section>
 
     <style>
@@ -47,5 +47,10 @@ import Buttons from "./Buttons.astro"
                     list-style: none;
                 }
             }
+        }
+
+        ::backdrop{
+        background:#0003;
+        backdrop-filter:blur(4px);
         }
     </style>
