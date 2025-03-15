@@ -1,9 +1,46 @@
 ---
-const {name, title, description, link} = Astro.props;
+import Titles from "./Titles.astro";
+const {name, title, description, link, img, icon} = Astro.props;
 ---
 <ul>
     <a href={"/employees/"+link}>
-    <li>{name}</li>
-    <li>{title}</li>
-    <li>{description}</li></a>
+    <li>
+        <img src={img} alt="">
+    </li>
+    <li>
+        <Titles class="secondary">{title}</Titles>
+    </li>
+    <li>
+        <h2>{name}</h2>
+    </li>
+    <li>
+        <p>
+            {description}
+        </p>
+    </li>
+    <li>{icon}</li>
+</a>
 </ul>
+
+<style>
+    ul{
+        padding-bottom:5rem;
+        li{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        gap:25px;
+        &:nth-child(2){
+            display: flex;
+            align-items: flex-end;
+            margin-right:1.2rem;
+            position: relative;
+            top:-3rem;
+        }
+        p{
+            font-weight: 400;
+        }
+    }
+}
+
+</style>

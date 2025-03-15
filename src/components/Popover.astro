@@ -1,0 +1,21 @@
+---
+import Titles from "./Titles.astro"
+---
+<div>
+    <Titles>team</Titles>
+    <h2><slot/></h2>
+</div>
+
+<style>
+    div{
+        border-radius: 29px;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(5.5px);   
+        
+        display: inline-flex;
+        padding: 48px 60px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+</style>

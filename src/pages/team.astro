@@ -1,7 +1,8 @@
 ---
-
+import Buttons from "../components/Buttons.astro";
 import EmplyeesCard from "../components/EmplyeesCard.astro";
 import Layout from "../layouts/Layout.astro";
+import Popover from "../components/Popover.astro";
 
 const employees = await fetch(
   "https://frontend-design-theme.netlify.app/api/employees"
@@ -11,13 +12,65 @@ console.log("liste",employees);
 ---
 
 <Layout>
-    <div>
-        <ul>
-            {
-                employees.map((elm)=>(
-                    <EmplyeesCard name={elm.name} title={elm.title} description = {elm.description} link={elm.slug}/>
-                ))
-            }
-        </ul>
+    <div class="hero">
+        <img src="../images/team_hero.jpg" alt="">
+        <div class="popover">
+            <Popover>The Consulters</Popover>
+        </div>
     </div>
+    <section>
+        <article>
+            <h2>Meet Our Great Team</h2>
+            <p>Welcome to our amazing team! We are a group of passionate individuals dedicated to excellence and innovation. Each member brings unique skills and experiences, working together to achieve our goals. Join us as we embark on exciting projects and create lasting impacts.</p>
+            <div>
+                <Buttons variant="secondary" size="medium">Join our team</Buttons>
+            </div>
+        </article>
+            <ul>
+                {
+                    employees.map((elm)=>(
+                        <EmplyeesCard img={elm.img} name={elm.name} title={elm.title} description = {elm.description} icons={elm.icon} link={elm.slug}/>
+                    ))
+                }
+            </ul>
+    </section>
 </Layout>
+
+<style>
+.hero {
+    img{
+        height:100%;
+        border-radius: 0;
+    }
+
+    .popover{
+        position:absolute;
+        top:15rem;
+    }
+}
+
+   section{
+        padding-inline: var(--content-width);
+        padding-top:var(--content-height);
+        padding-bottom:var(--content-height);
+
+        article{
+            display:flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap:8px;
+            width:630px;
+            
+            div{
+             display: flex;
+            align-items: flex-end;
+            gap:443px;
+            }
+        }
+    }
+
+    ul{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        }
+</style>
