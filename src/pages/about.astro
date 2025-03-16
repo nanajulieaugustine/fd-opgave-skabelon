@@ -1,0 +1,148 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Popover from "../components/Popover.astro"
+import Titles from "../components/Titles.astro"
+import Checkmark from "../components/Checkmark.astro"
+import CoreValues from "../components/CoreValues.astro"
+import EmplyeesCard from "../components/EmplyeesCard.astro"
+
+const employees = await fetch(
+  "https://frontend-design-theme.netlify.app/api/employees?limit=3"
+).then((response) => response.json());
+
+console.log("liste",employees);
+---
+<Layout>
+    <div class="hero">
+        <img src="../images/about_hero.jpg" alt="">
+        <div class="popover">
+            <Popover>Creative Services For Boos Your Buisness</Popover>
+        </div>
+    </div>
+    <section class="ideaToReality">
+        <article>
+            <Titles>Our Vision</Titles>
+            <h2>Turn your idea into reality.</h2>
+            <p>Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.</p>
+            <Checkmark>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day.</Checkmark>
+            <Checkmark>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.</Checkmark>
+        </article>
+        <figure>
+            <img src="../images/about_photo1.jpg" alt="meeting">
+        </figure>
+    </section>
+    <div class="corevalues">
+        <CoreValues></CoreValues>
+    </div>
+    <section class="team">
+        <article>
+            <Titles>Our Team</Titles>
+            <h1>We champion the bold to achieve the extraordinary</h1>
+            <p>Our success stems from the synergy between dedicated teams and our valued clients. We prioritize a company culture that fosters exceptional productivity, ensures customer satisfaction, and promotes mutual respect among all team members.</p>
+        </article>
+        <ul>
+            {
+                employees.map((elm)=>(
+                    <EmplyeesCard img={elm.img} name={elm.name} title={elm.title} description = {elm.description} icons={elm.icon} link={elm.slug}/>
+                ))
+            }
+        </ul>
+    </section>
+</Layout>
+
+<style>
+
+.hero {
+    img{
+        height:100%;
+        border-radius: 0;
+    }
+
+    .popover{
+        position:absolute;
+        top:15rem;
+        left:5rem;
+    }
+}
+
+   section{
+        padding-inline: var(--content-width);
+        padding-top:var(--content-height);
+        padding-bottom:var(--content-height);
+   }
+
+   .ideaToReality{
+    display: inline-flex;
+    align-items: flex-end;
+    gap:122px;
+
+    article{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+    figure{
+         width:100%; 
+      &::before{
+        right:-1.2rem;
+        top:-3rem;
+      }
+      &::after{
+        right: 1rem;
+        top: -2rem;
+      }
+    }
+   }
+
+   figure{
+      position:relative;
+
+          &::before {
+        --square-count: 10;
+        --square-size: 1.34rem;
+        
+        --_square-size: var(--square-size, 1rem);
+        --_square-half: calc(var(--square-size) / 2);
+        --_square-sum: calc(var(--square-count) * var(--square-size));
+        z-index: -1;
+        content: '';
+        position: absolute;
+        inline-size: calc( round( var(--_square-sum), var(--_square-size) ) - var(--_square-half) );
+        aspect-ratio: 1;
+        background: linear-gradient(135deg, #BE965D, #976F40, #C99B61, #F0BE7B , #FFCB85, #EEBC79, #C0935B, #976F40) 0 0 / 100% 100%;
+        mask:
+          var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
+          var(--square-pattern) var(--_square-half) var(--_square-half) / var(--_square-size) var(--_square-size);
+      }
+        &::after {
+      content: '';
+      position: absolute;
+      background: var(--primary02-color);
+      width: 150px;
+      height: 100px;
+      border-radius: 20px;
+      z-index: -1;
+    }
+  } 
+
+  .corevalues{
+    background-color: var(--secondary01-color);
+  }
+
+  .team{
+    article{
+        display: flex;
+        width: 643px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+    }
+  }
+  ul{
+        padding-top:2rem;
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+     }
+
+</style>

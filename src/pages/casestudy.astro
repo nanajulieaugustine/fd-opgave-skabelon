@@ -1,0 +1,125 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Popover from "../components/Popover.astro";
+import Buttons from "../components/Buttons.astro";
+---
+<Layout>
+    <div class="hero">
+        <img src="../images/casestudy_hero.png" alt="people">
+        <div class="popover">
+            <Popover>Taxes & Efficiency</Popover>
+        </div>
+    </div>
+    <section>
+        <img src="../images/computer.jpg" alt="computer">
+        <div>
+            <ul>
+                <li>Case Name</li>
+                <li>Taxes & Effeciency</li>
+                <li>Company</li>
+                <li>Buisness</li>
+                <li>Date</li>
+                <li>27th September 2025</li>
+            </ul>
+            <Buttons size="large">Live Preview</Buttons>
+        </div>
+    </section>
+    <section>
+        <article>
+            <h1>Project Overview</h1>
+            <p>Carrying out a major operational study allowed us to elevate data handling and streamline core tasks. By engaging each department thoroughly, we minimized wasted energy and promoted transparent communication. These changes empower the workforce to address key goals efficiently while boosting productivity. Advanced resources drive sustained innovation. Frequent reviews keep teams aligned with strategic objectives</p>
+            <ul>
+                <li>It brings the right people together with all the right information and tools to get work done</li>
+                <li>We provide operational efficiency, data security, and flexible scale</li>
+                <li>Your best work, together in one package that works seamlessly from your computer</li>
+                <li>Delivers the tools you need to save time Improve field performance always</li>
+            </ul>
+        </article>
+        <article>
+            <h2>Storyboard</h2>
+            <p>Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service. Objectively innovate empowered manufactured products whereas parallel platforms. Holistically predominate extensible testing procedures for reliable supply chains.</p>
+            <p>Proactively envisioned multimedia based expertise and cross-media growth strategies. Seamlessly visualize quality intellectual capital without superior collaboration and idea-sharing. Holistically pontificate installed base portals after maintainable products completely pursue scalable customer service.</p>
+            <img src="../images/casestudy_photo3.jpg" alt="meeting over computer">
+        </article>
+        <article>
+            <h2>Project result</h2>
+            <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
+            <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+        </article>
+    </section>
+</Layout>
+
+<style>
+    .hero {
+    img{
+        height:100%;
+        border-radius: 0;
+    }
+
+    .popover{
+        position:absolute;
+        top:15rem;
+        left:5rem;
+    }
+}
+
+figure{
+
+}
+
+   section{
+        padding-inline: var(--content-width);
+        padding-top:var(--content-height);
+        padding-bottom:var(--content-height);
+
+        div{
+            position: relative;
+            top:-50px;
+            left:50px;
+            display: flex;
+            width: 1028px;
+            padding: 53px 60px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            border-radius: 30px;
+            
+            background-color: var(--primary03-color);
+            ul{
+                display: flex;
+                align-items: flex-start;
+                gap: 100px;
+                li{
+                list-style: none;
+                color:var(--secondary02-color);
+                font-size: var(--xxsm-font-size);
+
+                &:nth-child(odd){
+                font-size: var(--xsm-font-size);
+                font-weight: 500;
+            }
+            }
+            }
+        }
+
+        article{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 26px;
+        padding-bottom:2rem;
+        padding-inline: var(--content-width);
+
+        ul{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        }
+
+        img{
+            align-self: center;
+        }
+        }
+    }
+</style>

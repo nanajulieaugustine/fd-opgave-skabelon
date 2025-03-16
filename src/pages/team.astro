@@ -26,14 +26,14 @@ console.log("liste",employees);
                 <Buttons variant="secondary" size="medium">Join our team</Buttons>
             </div>
         </article>
-            <ul>
-                {
-                    employees.map((elm)=>(
-                        <EmplyeesCard img={elm.img} name={elm.name} title={elm.title} description = {elm.description} icons={elm.icon} link={elm.slug}/>
-                    ))
-                }
-            </ul>
     </section>
+    <ul>
+        {
+            employees.map((elm)=>(
+                <EmplyeesCard img={elm.img} name={elm.name} title={elm.title} description = {elm.description} icons={elm.icon} link={elm.slug}/>
+            ))
+        }
+    </ul>
 </Layout>
 
 <style>
@@ -46,6 +46,7 @@ console.log("liste",employees);
     .popover{
         position:absolute;
         top:15rem;
+        left:5rem;
     }
 }
 
@@ -72,5 +73,6 @@ console.log("liste",employees);
     ul{
         display:grid;
         grid-template-columns: 1fr 1fr 1fr;
+        padding-inline: var(--content-width);
         }
 </style>

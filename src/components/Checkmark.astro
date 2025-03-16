@@ -1,0 +1,31 @@
+---
+---
+<ul>
+    <li>
+      <slot/>
+    </li>
+</ul>
+
+<style>
+    ul {
+      display: grid;
+      gap: 1rem;
+      padding-left: 0;
+      }
+      
+      li{
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 1rem;
+        font-size: 1rem;
+        color: #595566;
+      }
+      li:before {
+      content: '';
+      width: 1.6rem;
+      height:1lh;
+      background: var(--checkmark-icon) 50% 50% / 100% auto no-repeat;
+      background-position:50%;
+      background-size:100% auto;
+      }
+</style>
