@@ -14,7 +14,9 @@ console.log("liste",servicesData);
       <li>
         <h2>{service.title}</h2>
         <p>{service.description}</p>
-        <Buttons variant="tertiary" size="medium"><a href="#0">{service.buttonText}</a></>
+        <div>
+          <Buttons variant="secondary" size="small"><a href="#0">{service.buttonText}</a></>
+        </div>
       </li>
     ))
   }
@@ -22,6 +24,8 @@ console.log("liste",servicesData);
 <style>
 
   ul{
+    position:relative;
+    top:-7rem;
     padding-inline: var(--content-width);
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;

@@ -49,7 +49,7 @@ console.log("liste",coreValues);
       flex-direction: column;
       align-items: flex-start;
       gap:8px;
-      width:1200px;
+      /* width:1200px; */
 
       h1 {
       color: var(--secondary02-color);
@@ -58,9 +58,12 @@ console.log("liste",coreValues);
       div{
         display: flex;
         align-items: flex-end;
-        gap:443px;
+        gap:20px;
+        align-self: stretch;
         p {
+          max-width:65ch;
         color: var(--secondary02-color);
+        margin-right:auto;
         }
       }
       }

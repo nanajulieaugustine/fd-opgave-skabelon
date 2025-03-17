@@ -5,6 +5,7 @@ import Titles from "../components/Titles.astro"
 import Checkmark from "../components/Checkmark.astro"
 import CoreValues from "../components/CoreValues.astro"
 import EmplyeesCard from "../components/EmplyeesCard.astro"
+import FAQ from "../components/FAQ.astro"
 
 const employees = await fetch(
   "https://frontend-design-theme.netlify.app/api/employees?limit=3"
@@ -48,6 +49,7 @@ console.log("liste",employees);
             }
         </ul>
     </section>
+    <FAQ></FAQ>
 </Layout>
 
 <style>
@@ -133,13 +135,14 @@ console.log("liste",employees);
   .team{
     article{
         display: flex;
-        width: 643px;
+        max-width: 69ch;
         flex-direction: column;
         align-items: flex-start;
         gap: 22px;
     }
   }
   ul{
+        gap:30px;
         padding-top:2rem;
         display:grid;
         grid-template-columns: 1fr 1fr 1fr;

@@ -17,13 +17,15 @@
   /*font-sizing*/
   --xlg-font-size: 50px;
   --lg-font-size: 45px;
+  --xmd-font-size: 35px;
   --md-font-size: 25px;
   --sm-font-size: 20px;
   --xsm-font-size: 18px;
   --xxsm-font-size: 16px;
 
   /*spacing*/
-  --content-width: 10rem;
+  --content-width: max(20px, 50% - var(--content-width-default) / 2);
+  --content-width-default: 70rem;
   --content-height: 4rem;
 
   /*icons*/

@@ -1,5 +1,5 @@
 ---
-const {name, title, description_long, img, icon, past_description} = Astro.props;
+const {name, title, description_long, img, icon, past_experience} = Astro.props;
 ---
 
 <section>
@@ -10,10 +10,86 @@ const {name, title, description_long, img, icon, past_description} = Astro.props
         <h2>{name}</h2>
         <h4>{title}</h4>
         <p>{description_long}</p>
-    </article>
     <hr>
-    <article>
         <h2>Past Expereince</h2>
-        <p>{past_description}</p>
+        <p>{past_experience}</p>
     </article>
 </section>
+
+<style>
+
+    section{
+    padding-inline: var(--content-width);
+    padding-top:var(--content-height);
+    padding-bottom:var(--content-height);
+    display:inline-flex;
+    align-items: flex-start;
+    gap:82px;
+
+    figure{
+        width:100%;
+      &::before{
+        left:-2.5rem;
+        top:-3rem;
+      }
+      &::after{
+        left: -1rem;
+        top: -2rem;
+      }
+    }
+
+    article{
+      display:flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 59ch;
+      gap:14px;
+
+      h2{
+        font-size:var(--xmd-font-size);
+        margin-top:0.5rem;
+        line-height: 1;
+      }
+
+      h4{
+        color:var(--tertiary01-color);
+        font-weight:200;
+        &+*{
+            margin-top:1rem;
+        }
+      }
+    }
+  }
+
+
+  figure{
+      position:relative;
+
+          &::before {
+        --square-count: 10;
+        --square-size: 1.34rem;
+        
+        --_square-size: var(--square-size, 1rem);
+        --_square-half: calc(var(--square-size) / 2);
+        --_square-sum: calc(var(--square-count) * var(--square-size));
+        z-index: -1;
+        content: '';
+        position: absolute;
+        inline-size: calc( round( var(--_square-sum), var(--_square-size) ) - var(--_square-half) );
+        aspect-ratio: 1;
+        background: linear-gradient(135deg, #BE965D, #976F40, #C99B61, #F0BE7B , #FFCB85, #EEBC79, #C0935B, #976F40) 0 0 / 100% 100%;
+        mask:
+          var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
+          var(--square-pattern) var(--_square-half) var(--_square-half) / var(--_square-size) var(--_square-size);
+      }
+        &::after {
+      content: '';
+      position: absolute;
+      background: var(--primary02-color);
+      width: 150px;
+      height: 100px;
+      border-radius: 20px;
+      z-index: -1;
+    }
+  }
+</style>

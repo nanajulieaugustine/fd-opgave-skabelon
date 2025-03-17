@@ -7,7 +7,7 @@ const {variant, size}=Astro.props;
 <style>
     button{
         cursor:pointer;
-        color: var(--primary03-color);
+        /* color: var(--primary03-color); */
         background-color:var(--primary01-color);
         border-radius: 42px;
         font-weight: 600;
@@ -39,27 +39,19 @@ const {variant, size}=Astro.props;
     }
 
     [data-size="xlarge"] {
-        width:245px;
-        height:59px;
         padding:15px 56px;
     }
 
     [data-size="large"]{
-        width:189px;
-        height:61px;
         padding:16px 31px;
     }
 
-    [date-size="medium"]{
-        width:5rem;
-        height:10px;
+    [data-size="medium"]{
         border-radius: 55px;
         padding:15px 34px;
     }
 
-    [date-size="small"]{
-        width:74px;
-        height:36px;
+    [data-size="small"]{
         border-radius: 20px;
         padding:4px 16px;
     }

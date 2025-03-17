@@ -1,8 +1,24 @@
 ---
-const faq = await fetch(
+const faqData = await fetch(
   "https://frontend-design-theme.netlify.app/api/faq"
 ).then((response) => response.json());
 
-console.log("liste",faq);
+console.log("liste",faqData);
 ---
 
+<section>
+  <div>
+    {faqData.faq.map((faq)=>{
+      <details name="accordion">
+        <summary>
+          <span>
+            {faq.question} /*plusicon*/
+          </span>
+        </summary>
+        <div>
+          <p>{faq.answer}</p>
+        </div>
+      </details>
+    })}
+  </div>
+</section>

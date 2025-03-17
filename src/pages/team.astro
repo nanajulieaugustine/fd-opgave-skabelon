@@ -21,8 +21,8 @@ console.log("liste",employees);
     <section>
         <article>
             <h2>Meet Our Great Team</h2>
-            <p>Welcome to our amazing team! We are a group of passionate individuals dedicated to excellence and innovation. Each member brings unique skills and experiences, working together to achieve our goals. Join us as we embark on exciting projects and create lasting impacts.</p>
             <div>
+                <p>Welcome to our amazing team! We are a group of passionate individuals dedicated to excellence and innovation. Each member brings unique skills and experiences, working together to achieve our goals. Join us as we embark on exciting projects and create lasting impacts.</p>
                 <Buttons variant="secondary" size="medium">Join our team</Buttons>
             </div>
         </article>
@@ -60,17 +60,23 @@ console.log("liste",employees);
             flex-direction: column;
             align-items: flex-start;
             gap:8px;
-            width:630px;
             
             div{
              display: flex;
             align-items: flex-end;
-            gap:443px;
+            gap:20px;
+            align-self: stretch;
+
+            p{
+            max-width:65ch;
+            margin-right:auto;
             }
         }
     }
+}
 
     ul{
+        gap:30px;
         display:grid;
         grid-template-columns: 1fr 1fr 1fr;
         padding-inline: var(--content-width);

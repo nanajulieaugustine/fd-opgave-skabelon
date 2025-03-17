@@ -1,8 +1,7 @@
 ---
 import Titles from "./Titles.astro";
-const {name, title, description, link, img, icon} = Astro.props;
+const {name, title, description, link, img, social_links} = Astro.props;
 ---
-<ul>
     <a href={"/employees/"+link}>
     <li>
         <img src={img} alt="">
@@ -18,13 +17,10 @@ const {name, title, description, link, img, icon} = Astro.props;
             {description}
         </p>
     </li>
-    <li>{icon}</li>
+    <!-- <li>{social_links}</li> -->
 </a>
-</ul>
 
 <style>
-    ul{
-        padding-bottom:5rem;
         li{
         display:flex;
         flex-direction: column;
@@ -37,10 +33,12 @@ const {name, title, description, link, img, icon} = Astro.props;
             position: relative;
             top:-3rem;
         }
+        &:last-child{
+            padding-bottom: 3rem;
+        }
         p{
             font-weight: 400;
         }
     }
-}
 
 </style>

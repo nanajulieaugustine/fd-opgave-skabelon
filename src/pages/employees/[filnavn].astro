@@ -1,15 +1,30 @@
 ---
+import Layout from '../../layouts/Layout.astro';
+import IndividualEmployee from '../../components/IndividualEmployee.astro';
+
 export async function getStaticPaths() {
     const url = "https://frontend-design-theme.netlify.app/api/employees";
     
     const employees = await fetch(url).then(res=>res.json())
     
     return employees.map(employee => ({
-        params: { filnavn: employee.slug }, // [produkt]=produkt.slug
-        props: { employee } // send al data med som props
+        params: { filnavn: employee.slug },
+        props: { employee }
       }))
   }
   
   const { employee } = Astro.props;
-  console.log(employee)
-  ---
+  console.log(employee);
+---
+
+<Layout>
+    <ul>
+        <IndividualEmployee {...employee} />
+        <!-- {
+          employees.map((elm) => (
+        <IndividualEmployee name = {elm.name} title = {elm.title} description_long = {elm.description_long} img = {elm.img} past_description = {elm.past_description}/>
+        ))
+        } -->
+      </ul>
+
+</Layout>
