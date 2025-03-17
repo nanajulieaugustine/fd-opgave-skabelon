@@ -10,7 +10,7 @@ const {name, title, description_long, img, icon, past_experience} = Astro.props;
         <h2>{name}</h2>
         <h4>{title}</h4>
         <p>{description_long}</p>
-    <hr>
+    <hr/>
         <h2>Past Expereince</h2>
         <p>{past_experience}</p>
     </article>
@@ -47,7 +47,6 @@ const {name, title, description_long, img, icon, past_experience} = Astro.props;
 
       h2{
         font-size:var(--xmd-font-size);
-        margin-top:0.5rem;
         line-height: 1;
       }
 
@@ -64,6 +63,7 @@ const {name, title, description_long, img, icon, past_experience} = Astro.props;
 
   figure{
       position:relative;
+      flex-shrink: 0.5;
 
           &::before {
         --square-count: 10;

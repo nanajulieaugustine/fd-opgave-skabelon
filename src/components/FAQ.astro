@@ -1,24 +1,126 @@
 ---
+import PlusIcon from "../icons/plus.svg";
+import Titles from "./Titles.astro";
 const faqData = await fetch(
   "https://frontend-design-theme.netlify.app/api/faq"
 ).then((response) => response.json());
 
 console.log("liste",faqData);
 ---
-
 <section>
+  <article>
+    <Titles>FAQ</Titles>
+    <h1>Costumer Questions</h1>
+  </article>
   <div>
-    {faqData.faq.map((faq)=>{
+    {faqData.faq.map((faq)=>(
       <details name="accordion">
         <summary>
           <span>
-            {faq.question} /*plusicon*/
+            {faq.question} 
+            <PlusIcon></PlusIcon>
           </span>
         </summary>
         <div>
           <p>{faq.answer}</p>
         </div>
       </details>
-    })}
+    ))
+    }
   </div>
 </section>
+
+<style>
+  section{
+    background-color: var(--secondary01-color);
+    padding: 151px 236px;
+    margin-inline:var(--content-width);
+    margin-bottom:var(--content-height);
+    article{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-bottom:0.5rem;
+      p{
+        color:var(--secondary02-color);
+        background-color: var(--primary02-color);
+      }
+    }
+  details {
+    color: hsl(190 30% 12%);
+    border-bottom: 1px solid #dadada;
+    transition: all 0.5s ease;
+    @media (prefers-reduced-motion: no-preference) {
+    interpolate-size: allow-keywords;
+  }
+    &::details-content {
+      transition: all 0.5s ease, content-visibility 0.5s allow-discrete;
+      height: 0;
+      overflow: clip;
+  }
+  &[open]::details-content {
+    height: auto;
+  }
+  
+@supports (interpolate-size: allow-keywords) {
+    :root {
+        interpolate-size: allow-keywords;
+    }
+    [open]::details-content {
+        height: auto;
+    }
+}
+    summary {
+      font-weight: 700;
+      color: #181818;
+      text-wrap: revert;
+      user-select: none;
+      cursor: pointer;
+      transition:all 0.5s ease;
+
+      &::marker,
+      &::-webkit-details-marker {
+        content: "";
+        display: none;
+      }
+
+      span {
+        border: none;
+        text-align: start;
+        padding: 0;
+        inline-size: 100%;
+        padding-block: 1rlh;
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+
+        svg {
+          inline-size: auto;
+          height: 1lh;
+          flex-shrink: 0;
+          transition: transform 0.3s ease;
+
+          &[open]{
+            background-color:red;
+          }
+        }
+      }
+    }
+    .answer {
+      color: #595566;
+
+      > * + * {
+        margin-top: 1em;
+      }
+
+      :last-child {
+        padding-block-end: 1rlh;
+      }
+
+      .link-block {
+        display: block;
+      }
+    }
+  }
+}
+</style>
