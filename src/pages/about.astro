@@ -7,17 +7,23 @@ import CoreValues from "../components/CoreValues.astro"
 import EmplyeesCard from "../components/EmplyeesCard.astro"
 import FAQ from "../components/FAQ.astro"
 
-const employees = await fetch(
-  "https://frontend-design-theme.netlify.app/api/employees?limit=3"
+const data = await fetch(
+  "https://frontend-design-theme.netlify.app/api/employees"
 ).then((response) => response.json());
 
-console.log("liste",employees);
+const employees = data.slice(0,3)
+
 ---
 <Layout>
     <div class="hero">
         <img src="../images/about_hero.jpg" alt="">
         <div class="popover">
-            <Popover>Creative Services For Boos Your Buisness</Popover>
+            <Popover >
+                <span slot="category">about</span>
+                <h1 slot="title">
+                    Creative Services For Boost Your Buisness
+                    </h1>
+                </Popover>
         </div>
     </div>
     <section class="ideaToReality">

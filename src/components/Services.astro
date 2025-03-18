@@ -5,7 +5,6 @@ const servicesData = await fetch(
   "https://frontend-design-theme.netlify.app/api/services"
 ).then((response) => response.json());
 
-console.log("liste",servicesData);
 ---
 
 <ul>
@@ -15,7 +14,7 @@ console.log("liste",servicesData);
         <h2>{service.title}</h2>
         <p>{service.description}</p>
         <div>
-          <Buttons variant="secondary" size="small"><a href="#0">{service.buttonText}</a></>
+          <Buttons variant="secondary" size="small">{service.buttonText}</>
         </div>
       </li>
     ))

@@ -2,8 +2,8 @@
 import Titles from "./Titles.astro"
 ---
 <div>
-    <Titles>team</Titles>
-    <h2><slot/></h2>
+    <Titles><slot name="category"/></Titles>
+    <slot name="title"/>
 </div>
 
 <style>
@@ -11,6 +11,7 @@ import Titles from "./Titles.astro"
         border-radius: 29px;
         background: rgba(255, 255, 255, 0.85);
         backdrop-filter: blur(5.5px);   
+        max-width:600px;
         
         display: inline-flex;
         padding: 48px 60px;

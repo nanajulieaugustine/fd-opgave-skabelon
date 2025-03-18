@@ -5,7 +5,6 @@ const faqData = await fetch(
   "https://frontend-design-theme.netlify.app/api/faq"
 ).then((response) => response.json());
 
-console.log("liste",faqData);
 ---
 <section>
   <article>
@@ -53,14 +52,21 @@ console.log("liste",faqData);
     @media (prefers-reduced-motion: no-preference) {
     interpolate-size: allow-keywords;
   }
+
+  &[open] {
+  --r: z 90deg;
+}
+
     &::details-content {
-      transition: all 0.5s ease, content-visibility 0.5s allow-discrete;
+      transition: all 0.5s ease, content-visibility 0.5s allow-discrete, rotate 0.3s ease;
       height: 0;
       overflow: clip;
   }
   &[open]::details-content {
     height: auto;
   }
+
+  
   
 @supports (interpolate-size: allow-keywords) {
     :root {
@@ -98,11 +104,6 @@ console.log("liste",faqData);
           inline-size: auto;
           height: 1lh;
           flex-shrink: 0;
-          transition: transform 0.3s ease;
-
-          &[open]{
-            background-color:red;
-          }
         }
       }
     }
