@@ -22,8 +22,16 @@ import Buttons from "./Buttons.astro"
         background-color: var(--primary03-color);
         margin-inline:var(--content-width);
         border-radius: 15px;
-        width:1200px;
+        max-width:1200px;
         height:252px; 
+
+        @media (width<900px){
+       flex-direction: column;
+       gap:15px;
+    }
+        @media (width<650px){
+            height:300px; 
+        }
 
         article{
             display:flex;
@@ -44,6 +52,10 @@ import Buttons from "./Buttons.astro"
             border: 1px solid #E3E2E2E2;
             border-radius: 54px;
             background-color: var(--secondary02-color);
+
+            @media (width<650px){
+            padding:20px;
+            }
          }
         }
     }

@@ -70,6 +70,13 @@ const employees = data.slice(0,3)
         position:absolute;
         top:15rem;
         left:5rem;
+
+        @media (width<1100px){
+            top:10rem;
+        }
+        @media (width<850px){
+            display:none;
+        }
     }
 }
 
@@ -99,10 +106,16 @@ const employees = data.slice(0,3)
       &::before{
         right:-2.5rem;
         top:-3rem;
+        @media (width<950px){
+       right:15rem;
+    }
       }
       &::after{
         right: 1rem;
         top: -2rem;
+        @media (width<950px){
+       right:18rem;
+    }
       }
     }
    }

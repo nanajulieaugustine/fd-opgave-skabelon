@@ -24,17 +24,21 @@ const servicesData = await fetch(
 
   ul{
     position:relative;
+    grid-column: content;
+    overflow-x:auto;
     top:-7rem;
     padding-inline: var(--content-width);
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display:flex;
     gap: 10px; 
   }
   li{
+    flex-shrink: 0;
+    flex-basis:min(90%, 400px);
     display: flex;
     flex-direction: column;
     justify-content: center; 
     flex: 1 0 0;
+    min-width:400px;
     padding: 46px;
     border-radius: 20px;
 
