@@ -11,20 +11,22 @@ const {name, title, description_long, img, icon, past_experience} = Astro.props;
         <h4>{title}</h4>
         <p>{description_long}</p>
     <hr/>
-        <h2>Past Expereince</h2>
-        <p>{past_experience}</p>
+      <h2>Past Expereince</h2>
+      <p>{past_experience}</p>
     </article>
 </section>
 
 <style>
 
     section{
-    padding-inline: var(--content-width);
-    padding-top:var(--content-height);
-    padding-bottom:var(--content-height);
     display:inline-flex;
     align-items: flex-start;
     gap:82px;
+
+    @media (width<750px){
+       flex-direction: column;
+    }
+    }
 
     figure{
         width:100%;
@@ -45,6 +47,10 @@ const {name, title, description_long, img, icon, past_experience} = Astro.props;
       max-width: 59ch;
       gap:14px;
 
+      p:last-child{
+      @media (width<1000px){
+       background-color: red;
+      }
       h2{
         font-size:var(--xmd-font-size);
         line-height: 1;

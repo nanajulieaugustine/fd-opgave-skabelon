@@ -91,6 +91,9 @@ import Checkmark from "../components/Checkmark.astro";
         top: -2rem;
       }
     }
+    @media (width<950px){
+       flex-direction: column;
+    }
 
     article{
       display:flex;
@@ -124,6 +127,11 @@ import Checkmark from "../components/Checkmark.astro";
     align-items: flex-start;
     gap:69px;
 
+    @media (width<700px){
+       flex-direction: column;
+       gap:0;
+    }
+
     article{
       display: flex;
       flex-direction: column;
@@ -154,6 +162,14 @@ import Checkmark from "../components/Checkmark.astro";
       "woman computer"
       "woman hands";
       gap:16px;
+
+      @media (width<850px){
+        margin-top:10rem;
+        }
+
+        @media (width<700px){
+       margin-top:0;
+    }
 
       &::before{
         top:-3rem;

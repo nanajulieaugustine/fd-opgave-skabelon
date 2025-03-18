@@ -31,9 +31,9 @@ import Buttons from "../components/Buttons.astro";
                     <h3>Date</h3>
                     <p>27th September 2025</p>
                 </li>
-                <div>
+                <li>
                     <Buttons size="large">Live Preview</Buttons>
-                </div>
+                </li>
             </ul>
         </div>
     </section>
@@ -73,13 +73,16 @@ import Buttons from "../components/Buttons.astro";
         position:absolute;
         top:15rem;
         left:5rem;
+
+        @media (width<1200px){
+       top:10rem;
+    }
+
+    @media (width<800px){
+       
+    }
     }
 }
-
-figure{
-
-}
-
    section{
         padding-inline: var(--content-width);
         padding-top:var(--content-height);
@@ -110,7 +113,7 @@ figure{
                 h3, p{
                     color:var(--secondary02-color);
                 }
-                div:last-child{
+                &:last-child{
                 display: flex;
                 align-items: flex-end;
                 gap:20px;

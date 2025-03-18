@@ -34,9 +34,11 @@ const expereinces = await fetch(
     align-items: flex-start;
     gap:89px;
     background-color: var(--primary01-color);
-    padding-inline: var(--content-width);
-    padding-top:var(--content-height);
-    padding-bottom:var(--content-height);
+
+    @media (width<1150px){
+       flex-direction: column;
+       align-items: center;
+    }
 
     article{
       display: flex;
@@ -44,7 +46,11 @@ const expereinces = await fetch(
       align-items: flex-start;
       flex-shrink: 0;
       gap:22px;
-      width:375px;
+      max-width:375px;
+
+      @media (width<1150px){
+       max-width:10000px;
+    }
 
       p:first-child{
         background-color: var(--secondary02-color);
@@ -60,6 +66,10 @@ const expereinces = await fetch(
       align-items: flex-start;
       margin-top:2rem;
       gap:90px;
+
+      @media (width<700px){
+       flex-direction: column;
+    }
 
       li{
       list-style: none;
@@ -80,6 +90,10 @@ const expereinces = await fetch(
         div{
       --p:calc(var(--percent)*1%);
       --border-width: 4px;
+      --border-width: 5px;
+      --border-color: #FFFFFF;
+      --border-bg: #DAAE3C;
+
       aspect-ratio: 1;
       width: 150px;
       border-radius: calc(Infinity * 1px);

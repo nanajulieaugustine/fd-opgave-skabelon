@@ -38,29 +38,24 @@ const coreValues = await fetch(
 </section>
 
 <style>
-  section{
-    padding-inline: var(--content-width);
-    padding-top:var(--content-height);
-    padding-bottom:var(--content-height);
-    
+
     article{
       display:flex;
       flex-direction: column;
       align-items: flex-start;
       gap:8px;
 
-      /* h1 {
-      color: var(--secondary02-color);
-      } */
-
       div{
         display: flex;
         align-items: flex-end;
         gap:20px;
         align-self: stretch;
+        @media (width<850px){
+          flex-direction: column;
+          align-items: flex-start;
+        }
         p {
           max-width:65ch;
-        /* color: var(--secondary02-color); */
         margin-right:auto;
         }
       }
@@ -72,10 +67,14 @@ const coreValues = await fetch(
         align-items: flex-start;
         gap:36px;
 
+          @media (width<1290px){
+          overflow-x: auto;
+      }
+        
+
         li{
           border-radius: 10px;
           border: 1px solid #EAEAEA;
-          /* background: var(--secondary01-color); */
           display: flex;
           width: 272px;
           padding: 36px 23px;
@@ -85,5 +84,5 @@ const coreValues = await fetch(
           flex-shrink: 0;
         }
     }
-  }
+
 </style>

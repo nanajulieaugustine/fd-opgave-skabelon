@@ -71,6 +71,10 @@ console.log("liste",employees);
             align-items: flex-end;
             gap:20px;
             align-self: stretch;
+            @media (width<850px){
+          flex-direction: column;
+          align-items: flex-start;
+        }
 
             p{
             max-width:65ch;
@@ -85,5 +89,11 @@ console.log("liste",employees);
         display:grid;
         grid-template-columns: 1fr 1fr 1fr;
         padding-inline: var(--content-width);
+
+        @media (width<800px){
+            gap:10px;
+       grid-template-columns: 1fr 1fr;
+    }
+
         }
 </style>

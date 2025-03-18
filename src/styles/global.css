@@ -93,3 +93,15 @@ p {
   color: var(--tertiary01-color);
   line-height: 23.6px;
 }
+
+section {
+  padding-inline: var(--content-width);
+  padding-top: var(--content-height);
+  padding-bottom: var(--content-height);
+}
+
+[data-set="no-padding"] {
+  padding-inline: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}

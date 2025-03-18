@@ -29,10 +29,10 @@ import Buttons from "./Buttons.astro"
             display:flex;
             padding:38px;
             justify-content: space-between;
+            padding-inline:var(--content-width);
             align-items: flex-start;
             background: rgba(27, 27, 27, 0.91);
             backdrop-filter: blur(10.5px);
-            padding-inline:var(--content-width);
             align-items: center;
             a:not(nav a) {
             font-size: var(--md-font-size);
@@ -56,6 +56,7 @@ import Buttons from "./Buttons.astro"
                 }
             }
         }
+
         ::backdrop {
         background: #0003;
         backdrop-filter: blur(4px);
@@ -77,6 +78,7 @@ import Buttons from "./Buttons.astro"
             translate: 0 100%;
             }
         }
+
         }
         #popup{
             background-color: var(--primary03-color);
