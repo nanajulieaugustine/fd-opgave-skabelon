@@ -1,19 +1,12 @@
-# Opgaveskabelon til Frontend Design tema på Frontend-valgfaget
+Som starten på projektet, startede jeg ud med at lave en global css, der havde alle de forskellige værdier i sig. Jeg er tilfreds med at jeg har anvendt mig at globale variabler eftersom jeg slap for en god del overflødig kode. Dog er der dele af mine variabler, der ikke er i brug, som jeg ikke har haft tid til at rydde op i.
+Til gengæld, ville jeg ønske at jeg havde været ligeså vedligeholdende med mine komponenter. Jeg kunne fra start af, have brugt mere tid på at danne mig et overblik over hvilke komponenter, der bliver genbrugt i de forskellige former for cards. Lignende har jeg ikke gjort mig brug af den helt samme struktur i de dele, der er globale. For eksmpel har jeg individuelt på mange af mine sites stylet articles på den samme måde, hvoraf djeg kunne have sparet kode ved at gøre dette globalt.
 
-Se opgavebeskrivelsen på Fronter.
+I min proces, gjorde jeg mig meget brug af Figmas code recommendations, hvilket gjorde at jeg hurtigt fik meget indhold ind på sitet uden at bruge for meget tid på statisk implimentering. Dog ville jeg også sige at dette har haft sine svækkelser på min kode eftersom jeg i nogle dele ikke har taget stilling til hvilken implimentering, ville give det bedste resultat. For eksempel har jeg ikke haft tid til at gøre min hero-sektion responsiv eftersom jeg havde anvendt flex, hvor det havde givet mere mening at bruge grid. Dog har jeg i processen tillært mig flex-teknikker, som jeg før projektet ikke var velkendt i.
 
-## Medfølgende API
+Jeg har anvendt mig meget af nesting og gjort min HTML-struktur så simpel som mulig. Dette gav et godt overblik i min proces, og har også gjort responsiviteten let at tilgå eftersom jeg har brugt media queries i de enklete sektioner, og på den måde hurtigt gjorde sitet responsivt.
 
-Der medfølger en simpel API, som du kan bruge til at hente data til din opgave. Det er ikke et krav til opgaven, men det kan gøre det nemmere og hurtigere at få tekst og billeder ind i dit projekt.
+Jeg har dog ikke været særlig kontinuerlig i enklete dele i min opgave. Jeg har for eksempel brugt tre forskellige metoder til at impotere SVG'ere. Her ville jeg ønske, at jeg havde skabt en bedre struktur.
 
-Dokumentationen til API'et finder du på: [https://frontend-design-theme.netlify.app/](https://frontend-design-theme.netlify.app/).
+Noget jeg er tilfreds med i min prces er, at jeg har anvendt mig meget af de dynamiske API'er. Dete skabte dog også frustrationer undervejs eftersom der var dele af fetching, der drillede henad vejen.
 
-Her er et eksempel på, hvordan du kan hente data fra API'et:
-
-```astro
-const employeesData = await fetch(
-  "https://frontend-design-theme.netlify.app/api/employees"
-).then((response) => response.json());
-
-console.log(employeesData);
-```
+Jeg er overorndet tilfreds med mit produkt selvom der er dele af opgaven, der kunne have været optimeret. Jeg er meget tilfreds med min håndtering af responsivitet. Jeg har anvendt mig af en calc-udregning til at skabe margin i siderne, hvilket allerede derfra løste mange af de problemer, jeg ellers ville have haft foruden, og gjorde også selve processen lettere. Dog ville jeg ønske at jeg havde anvendt mig lidt mere af flow-typography med clamp-metoden.
