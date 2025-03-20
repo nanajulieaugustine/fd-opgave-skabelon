@@ -22,6 +22,16 @@
   --sm-font-size: 20px;
   --xsm-font-size: 18px;
   --xxsm-font-size: 16px;
+  /* 
+  --space-3xs: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
+  --space-2xs: clamp(0.5625rem, 0.5398rem + 0.1136vw, 0.625rem);
+  --space-xs: clamp(0.875rem, 0.8523rem + 0.1136vw, 0.9375rem);
+  --space-s: clamp(1.125rem, 1.0795rem + 0.2273vw, 1.25rem);
+  --space-m: clamp(1.6875rem, 1.6193rem + 0.3409vw, 1.875rem);
+  --space-l: clamp(2.25rem, 2.1591rem + 0.4545vw, 2.5rem);
+  --space-xl: clamp(3.375rem, 3.2386rem + 0.6818vw, 3.75rem);
+  --space-2xl: clamp(4.5rem, 4.3182rem + 0.9091vw, 5rem);
+  --space-3xl: clamp(6.75rem, 6.4773rem + 1.3636vw, 7.5rem); */
 
   /*spacing*/
   --content-width: max(20px, 50% - var(--content-width-default) / 2);

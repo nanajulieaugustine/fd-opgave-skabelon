@@ -1,6 +1,8 @@
 ---
+//@ts-nocheck
 import Titles from "./Titles.astro";
 const {name, title, description, link, img, social_links} = Astro.props;
+
 ---
     <a href={"/employees/"+link}>
     <li>
@@ -17,7 +19,15 @@ const {name, title, description, link, img, social_links} = Astro.props;
             {description}
         </p>
     </li>
-    <!-- <li>{social_links}</li> -->
+    <!-- <ul>
+        {
+            social_links.map((link) => (
+                <li>
+            <p set:html={link.icon} />
+          </li>
+        ))
+    }
+    </ul> -->
 </a>
 
 <style>

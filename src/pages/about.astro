@@ -28,7 +28,7 @@ const employees = data.slice(0,3)
     </div>
     <section class="ideaToReality">
         <article>
-            <Titles>Our Vision</Titles>
+            <Titles class="secondary">Our Vision</Titles>
             <h2>Turn your idea into reality.</h2>
             <p>Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.</p>
             <Checkmark>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day.</Checkmark>
@@ -87,9 +87,9 @@ const employees = data.slice(0,3)
    }
 
    .ideaToReality{
-    display: inline-flex;
+    display:flex;
     align-items: flex-start;
-    gap:122px;
+    gap:60px;
 
     @media (width<950px){
        flex-direction: column;
@@ -115,10 +115,10 @@ const employees = data.slice(0,3)
         top: -2rem;
         @media (width<950px){
        right:18rem;
-    }
+        }
       }
     }
-   }
+      }
 
    figure{
       position:relative;

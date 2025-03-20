@@ -63,7 +63,7 @@ import Buttons from "./Buttons.astro"
         }
 
         ::backdrop {
-        background: #0003;
+        background-color: #0003;
         backdrop-filter: blur(4px);
         }
 
@@ -87,13 +87,21 @@ import Buttons from "./Buttons.astro"
         }
         #popup{
             background-color: var(--primary03-color);
-            display: flex;
+            
             padding: 40px 60px 60px 60px;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             gap: 10px;
             border-radius: 30px;
+
+            @media (width<850px){
+            padding:20px 40px;
+          }
+
+            &:popover-open {
+              display: flex;
+            }
             h1, label{
                 color:var(--secondary02-color);
             }

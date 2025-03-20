@@ -3,12 +3,13 @@ import Buttons from "../components/Buttons.astro";
 import EmplyeesCard from "../components/EmplyeesCard.astro";
 import Layout from "../layouts/Layout.astro";
 import Popover from "../components/Popover.astro";
+import type { ACTION_ERROR_CODES } from "astro:actions";
 
 const employees = await fetch(
   "https://frontend-design-theme.netlify.app/api/employees"
 ).then((response) => response.json());
 
-console.log("liste",employees);
+
 ---
 
 <Layout>
@@ -33,11 +34,15 @@ console.log("liste",employees);
         </article>
     </section>
     <ul>
-        {
+        <!-- {
             employees.map((elm)=>(
-                <EmplyeesCard img={elm.img} name={elm.name} title={elm.title} description = {elm.description} icons={elm.icon} link={elm.slug}/>
+                <EmplyeesCard img={elm.img} name={elm.name} title={elm.title} description={elm.description} social_links={elm.social_links} link={elm.slug}/>
             ))
-        }
+        } -->
+        {
+            employees.map((elm)=>
+                <EmplyeesCard {...elm}/>
+        )}
     </ul>
 </Layout>
 
